@@ -193,25 +193,86 @@ body {
     align-items: center;
     margin-bottom: 2rem;
 }
+/* The Grid: Smarter spacing and better responsive behavior */
 .blogs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+    /* auto-fill creates empty tracks if there aren't enough cards, keeping them sized correctly */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 2.5rem;
+    padding: 2rem 0;
 }
+
+/* The Card: Refined glassmorphism and depth */
 .blog-card {
     background: var(--card);
-    border-radius: 20px;
+    border-radius: 24px; /* Slightly rounder for a modern look */
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(59, 130, 246, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures cards in the same row are equal height */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother "Elastic" transition */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle inner border */
+    position: relative;
 }
+
+/* Interaction: Lift and Glow */
 .blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgb(59 130 246 / 0.2);
+    transform: translateY(-12px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 
+                0 0 20px rgba(59, 130, 246, 0.1);
 }
-.blog-card img { width: 100%; height: 200px; object-fit: cover; }
-.blog-content { padding: 1.5rem; }
-.blog-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+/* Image handling */
+.blog-card img { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.blog-card:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Content Layout */
+.blog-content { 
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes the "See Full Story" to the bottom */
+}
+
+.blog-card h3 { 
+    font-size: 1.5rem; 
+    line-height: 1.3;
+    margin-bottom: 0.75rem; 
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.excerpt { 
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits text to 3 lines for visual consistency */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+    .blogs-grid {
+        grid-template-columns: 1fr; /* Stack on small phones */
+        gap: 1.5rem;
+    }
+    
+    .blog-content {
+        padding: 1.5rem;
+    }
+}
 .excerpt { opacity: 0.85; font-size: 1.05rem; }
 .tags {
     display: flex;
@@ -259,6 +320,28 @@ body {
     animation: pulse 4s infinite ease-in-out;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between image and text */
+}
+
+.logo-img {
+    height: 40px; /* Adjust this to match your navbar height */
+    width: auto;  /* Maintains aspect ratio */
+    object-fit: contain;
+    /* Optional: if your logo is a simple black/white shape and you want it to glow */
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+}
+
+/* Ensure the text stays aligned with the image */
+.logo span {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -289,51 +372,61 @@ body {
     cursor: pointer;
 }
 
-
-/* See Full Story Button with Hover Effect */
+/* See Full Story Button - UI Perfect Edition */
 .see-full {
-    margin-top: 1rem;
+    margin-top: auto; /* Pushes button to the bottom of the card */
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 0;
+    gap: 8px;
+    padding: 12px 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.see-full:hover {
-    color: #60a5fa;
-    transform: translateX(8px);
-}
-
-.see-full:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent);
-    transform: scaleX(1);
-}
-
+/* The Animated Underline */
 .see-full::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 4px;
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--accent);
+    background: currentColor;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Hover States */
+.see-full:hover {
+    color: #60a5fa;
+    gap: 12px; /* Smoothly expands the gap for the arrow */
+}
 
+.see-full:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Adding a subtle glow text effect on hover */
+.see-full:hover {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive adjustment: Make it slightly larger touch target on mobile */
+@media (max-width: 768px) {
+    .see-full {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
 /* Amazing Search Bar */
 .amazing-search {
     max-width: 720px;
@@ -499,6 +592,90 @@ body {
     .social-btn {
         padding: 10px 16px;
         font-size: 14px;
+    }
+}
+
+/* --- Modern Modal UI Refinement --- */
+
+/* 1. Modal Body Spacing & Typography */
+#modal-body {
+    padding: 3rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+#modal-body h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+/* 2. Style the date/category line inside the modal */
+#modal-body .date {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 2.5rem;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+/* 3. Content Elements */
+#modal-body h3 {
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#modal-body p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* 4. Lists & Quotes */
+#modal-body ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+#modal-body li {
+    margin-bottom: 0.5rem;
+}
+
+#modal-body blockquote {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    border-radius: 0 12px 12px 0;
+}
+
+/* 5. Scrollbar Styling for the Modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+/* 6. Responsive Modal padding */
+@media (max-width: 768px) {
+    #modal-body {
+        padding: 2rem 1.5rem;
+    }
+    #modal-body h1 {
+        font-size: 1.8rem;
     }
 }
 
