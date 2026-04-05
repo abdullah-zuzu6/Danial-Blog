@@ -4,7 +4,7 @@ const blogs = [
     title: "My First Steps into Web Development",
     date: "April 1, 2026",
     category: "Technology",
-    tags: ["web-dev", "coding", "student-life"],
+    tags: ["web-dev",],
     excerpt: "How I built my very first responsive website as a CS student in Faisalabad.",
     content: `
         <h1>My First Steps into Web Development</h1>
@@ -39,7 +39,7 @@ const blogs = [
     title: "Balancing University Life and Side Projects",
     date: "March 20, 2026",
     category: "Lifestyle",
-    tags: ["student-life", "productivity", "time-management"],
+    tags: ["student-life"],
     excerpt: "How I manage 18 credit hours, cricket, and still ship side projects every month.",
     content: `
         <h1>Balancing University Life and Side Projects</h1>
@@ -80,7 +80,7 @@ const blogs = [
     title: "Why Every Student Should Learn AI Basics in 2026",
     date: "April 5, 2026",
     category: "Technology",
-    tags: ["ai", "machine-learning", "future-tech"],
+    tags: ["ai"],
     excerpt: "AI is no longer a buzzword. It's the new electricity — students must start now.",
     content: `
         <h1>Why Every Student Should Learn AI Basics in 2026</h1>
