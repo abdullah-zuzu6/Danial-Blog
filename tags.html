@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danial Blog | Tags</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📝</span>
+                <span>Danial Blog</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tags.html" class="nav-link active">Tags</a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search blogs..." autocomplete="off">
+                <div id="search-results" class="search-dropdown"></div>
+            </div>
+
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="tags.html">Tags</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Explore by Tags</h1>
+            <p>Click any tag to see related stories</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="color:aqua; " class="tags-cloud" id="tags-cloud"></div>
+        <div  class="blogs-grid" id="tags-grid"></div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="modal" id="blog-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

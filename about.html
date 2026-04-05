@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniyal Blog | About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📝</span>
+                <span>Daniyal Blog</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tags.html" class="nav-link">Tags</a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search blogs..." autocomplete="off">
+                <div id="search-results" class="search-dropdown"></div>
+            </div>
+
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="tags.html">Tags</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>About Daniyal</h1>
+        </div>
+    </header>
+
+    <div class="container about-page">
+        <div class="about-hero">
+            <div class="about-avatar">👨‍💻</div>
+            <h2>Hi, I'm Daniyal — CS Student from Faisalabad</h2>
+        </div>
+
+        <div class="about-content">
+            <p>I'm a passionate Computer Science undergraduate from Faisalabad, Punjab. I love coding, debugging, and writing about my real student experiences.</p>
+            <p>Currently focusing on web development, AI basics, and building useful projects while managing university life.</p>
+            
+            <h3>My Journey</h3>
+            <ul>
+                <li>Built multiple personal projects including this blog</li>
+                <li>Learning full-stack development</li>
+                <li>Sharing honest stories from a Pakistani student's perspective</li>
+            </ul>
+
+            <a href="contact.html" class="btn-primary">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="modal" id="blog-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

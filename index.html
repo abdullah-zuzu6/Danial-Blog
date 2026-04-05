@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniyal Blog | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📝</span>
+                <span>Daniyal Blog</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tags.html" class="nav-link">Tags</a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search blogs..." autocomplete="off">
+                <div id="search-results" class="search-dropdown"></div>
+            </div>
+
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="tags.html">Tags</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hey, I'm <span class="highlight">Daniyal</span></h1>
+            <p class="hero-subtitle">Computer Science student from Faisalabad sharing my coding journey, student life, and tech thoughts.</p>
+            <div class="hero-buttons">
+                <a href="categories.html" class="btn-primary">Browse All Blogs</a>
+                <a href="about.html" class="btn-secondary">About Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Blogs -->
+    <!-- <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Stories</h2>
+                <a href="categories.html" class="view-all">View All →</a>
+            </div>
+            <div class="blogs-grid" id="featured-grid"></div>
+        </div>
+    </section> -->
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Daniyal Blog • Faisalabad, Pakistan • Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Blog Modal -->
+    <div class="modal" id="blog-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

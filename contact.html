@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniyal Blog | Contact</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <span class="logo-icon">📝</span>
+            <span>Daniyal Blog</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="categories.html" class="nav-link">Categories</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+            <a href="tags.html" class="nav-link">Tags</a>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="global-search" placeholder="Search blogs..." autocomplete="off">
+            <div id="search-results" class="search-dropdown"></div>
+        </div>
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="tags.html">Tags</a>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>You can contact me directly using the details below</p>
+    </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<div class="container contact-page">
+
+    <!-- Hero like About -->
+    <div class="about-hero">
+        <div class="about-avatar">📬</div>
+        <h2>Let’s Connect</h2>
+    </div>
+
+    <!-- Content -->
+    <div class="about-content">
+
+        <h3>Contact Information</h3>
+
+        <p><strong>📍 Location:</strong> Faisalabad, Punjab, Pakistan</p>
+
+        <p><strong>📧 Email:</strong> 
+            <a href="mailto:daniyalnawaz288@gmail.com">
+                daniyalnawaz288@gmail.com
+            </a>
+        </p>
+
+        <p><strong>⏱ Response Time:</strong> Within 24 hours</p>
+
+        <h3>Social</h3>
+
+        <a  target="_blank" class="btn-primary">
+            📘 Facebook — Daniyal Nawaz
+        </a>
+
+        <p style="margin-top:20px;">
+            Feel free to reach out for collaboration, questions, or just a simple discussion about tech and blogging.
+        </p>
+
+    </div>
+</div>
+
+<!-- JS (for mobile menu) -->
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("mobile-menu");
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
